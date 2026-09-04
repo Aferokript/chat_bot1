@@ -42,8 +42,7 @@ def get_task_status(access_token, params):
                 
                 
     except requests.exceptions.ReadTimeout:
-        time.sleep(60)
-        return None
+        continue 
         
     except ConnectionError:
         return 'Ошибка подключения к интернету'

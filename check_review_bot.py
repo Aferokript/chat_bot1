@@ -57,6 +57,7 @@ def main():
         try:
             answer_about_task = get_task_status(access_token, params)
             if answer_about_task:
+                logging.debug('A new response sent to another server')
                 bot_send_message(token, chat_id, answer_about_task)
                 
         except requests.exceptions.ReadTimeout:
